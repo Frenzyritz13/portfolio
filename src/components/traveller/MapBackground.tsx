@@ -38,7 +38,7 @@ const MapBackground: React.FC<MapBackgroundProps> = ({ activeTravelId, travels }
         {...viewState}
         onMove={evt => setViewState(evt.viewState)}
         mapStyle="mapbox://styles/mapbox/light-v11"
-        mapboxAccessToken=MapBoxToken
+        mapboxAccessToken={import.meta.env.MAPBOX_TOKEN}
       >
         {travels.map(travel => (
           <Marker
