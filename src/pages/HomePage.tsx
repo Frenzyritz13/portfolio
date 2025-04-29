@@ -2,46 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import * as lucide from 'lucide-react';
+import { useSections } from '../hooks/useSections';
 
 const HomePage: React.FC = () => {
-  const sections = [
-    {
-      path: '/worker',
-      title: 'Worker Me',
-      icon: <lucide.User size={32} />,
-      description: 'My professional journey and experiences',
-      color: 'bg-navy-600 hover:bg-navy-500',
-    },
-    {
-      path: '/maker',
-      title: 'Maker and Artist',
-      icon: <lucide.Paintbrush size={32} />,
-      description: 'Projects, creations and artistic expressions',
-      color: 'bg-olive-600 hover:bg-olive-500',
-    },
-    {
-      path: '/traveller',
-      title: 'Traveller',
-      icon: <lucide.Map size={32} />,
-      description: 'Adventures and explorations around the world',
-      color: 'bg-mustard-600 hover:bg-mustard-500',
-    },
-    {
-      path: '/reader',
-      title: 'Reader and Muser',
-      icon: <lucide.BookOpen size={32} />,
-      description: 'Books, thoughts and inspirations',
-      color: 'bg-beige-600 hover:bg-beige-500',
-    },
-    {
-      path: '/adventures',
-      title: 'Adventures',
-      icon: <lucide.Sparkles size={32} />,
-      description: 'Trying new things and embracing experiences',
-      color: 'bg-navy-500 hover:bg-navy-400',
-    },
-  ];
-
+  const { data: sections, loading, error } = useSections();
+  if (loading) {
+    return <div className="w-full flex justify-center py-12">Loading...</div>;
+  }
+  if (error) {
+    return <div className="w-full py-8 text-red-500">Failed to load navigation sections.</div>;
+  }
   const container = {
     hidden: { opacity: 0 },
     show: {
