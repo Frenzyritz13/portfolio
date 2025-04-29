@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
         >
           <div className="max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-medium text-navy-600 dark:text-beige-200 mb-6">
-              Hey, I am ritvi! I love talking about maker stuff, travelling literally anywhere! And trying a ton of new stuff
+              Hey, I am Ritvi! I love stories! And while I love listening to them, here's a little insight into mine!
             </h2>
             <a 
               href="https://calendly.com/ritvi" 
@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
               className="inline-flex items-center px-6 py-3 bg-mustard-500 hover:bg-mustard-600 text-white rounded-lg transition-colors duration-300"
             >
               <lucide.Calendar size={20} className="mr-2" />
-              Schedule a chat with me
+              Stop by to say hi to me
             </a>
           </div>
 
